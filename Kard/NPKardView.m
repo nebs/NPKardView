@@ -20,8 +20,8 @@ static const CGFloat kNPKardViewAngleScale = 7.0;
     self.height = CGRectGetHeight(self.frame);
     self.halfWidth = self.width / 2.0;
     self.halfHeight = self.height / 2.0;
-    self.layer.allowsEdgeAntialiasing = YES;
 
+    self.layer.allowsEdgeAntialiasing = YES;
     self.layer.masksToBounds = NO;
     self.layer.shadowOffset = CGSizeMake(0.0, 1.0);
     self.layer.shadowColor = [[UIColor blackColor] CGColor];
