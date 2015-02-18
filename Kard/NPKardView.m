@@ -1,6 +1,6 @@
 #import "NPKardView.h"
 
-static const CGFloat kNPKardViewAngleScale = 10.0;
+static const CGFloat kNPKardViewAngleScale = 7.0;
 
 @interface NPKardView ()
 
@@ -20,8 +20,16 @@ static const CGFloat kNPKardViewAngleScale = 10.0;
     self.height = CGRectGetHeight(self.frame);
     self.halfWidth = self.width / 2.0;
     self.halfHeight = self.height / 2.0;
-    self.backgroundColor = [UIColor blueColor];
     self.layer.allowsEdgeAntialiasing = YES;
+
+    self.layer.masksToBounds = NO;
+    self.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    self.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.layer.shadowRadius = 0.9;
+    self.layer.shadowOpacity = 0.4;
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    self.layer.shouldRasterize = YES;
+    self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
 }
 
 #pragma mark - Touch handling

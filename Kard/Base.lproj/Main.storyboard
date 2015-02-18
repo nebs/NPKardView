@@ -18,14 +18,14 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ag6-FQ-tll" customClass="NPKardView">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="IgW-QA-iKQ"/>
                                     <constraint firstAttribute="height" constant="300" id="NWG-d9-rbI"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96659958964646464" green="0.96659958964646464" blue="0.96659958964646464" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Ag6-FQ-tll" secondAttribute="centerX" id="Vt1-iX-17V"/>
                             <constraint firstAttribute="centerY" secondItem="Ag6-FQ-tll" secondAttribute="centerY" id="jFt-Pv-rY8"/>
