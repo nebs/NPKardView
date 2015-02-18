@@ -1,11 +1,98 @@
 #import "NPKardView.h"
 
+@interface NPKardView ()
+
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic) CGFloat halfWidth;
+@property (nonatomic) CGFloat halfHeight;
+
+@end
+
 @implementation NPKardView
 
 - (void)awakeFromNib {
     [super awakeFromNib];
 
-    self.backgroundColor = [UIColor redColor];
+    self.width = CGRectGetWidth(self.frame);
+    self.height = CGRectGetHeight(self.frame);
+    self.halfWidth = self.width / 2.0;
+    self.halfHeight = self.height / 2.0;
+    self.backgroundColor = [UIColor blueColor];
+}
+
+#pragma mark - Touch handling
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self rotateForTouchPoint:[[touches anyObject] locationInView:self]];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
+    [self rotateForTouchPoint:[[touches anyObject] locationInView:self]];
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesCancelled:touches withEvent:event];
+    [self resetRotation];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+    [self resetRotation];
+}
+
+#pragma mark - Rotation
+
+- (void)resetRotation {
+    self.layer.transform = CATransform3DIdentity;
+}
+
+- (void)rotateForTouchPoint:(CGPoint)touchPoint {
+    /*
+     Vector 'a' is the user's touch relative to the center.
+     Vector 'b' is the rotation vector which is orthogonal to 'a'.
+
+     Given 'a' we find 'b' using a dot product. We fix 'bx' to some
+     value in the opposing quadrant then solve for 'by' using the
+     dot product:
+
+     ax * bx + ay * by = 0
+     by = - (ax * bx) / ay
+
+
+             |
+        o    |
+     (bx, by)|    o (ax, ay)
+             |
+     -----------------
+             |
+             |
+             |
+             |
+     */
+
+    // Shift the touch vector to the center
+    CGFloat ax = touchPoint.x - self.halfWidth;
+    CGFloat ay = touchPoint.y - self.halfHeight;
+
+    // Calculate the 'b' vector
+    CGFloat factor = ax > 0.0 ? -1.0 : 1.0;
+    CGFloat bx = ax + (factor * self.width);
+    CGFloat by = - (ax * bx) / ay;
+
+    // The rotation angle is proportial to 'a's distance from the center
+    CGFloat magnitude = sqrtf((ax * ax) + (ay * ay));
+    CGFloat angleScale = (ax < 0) == (ay < 0) ? 10.0 : -10.0;
+    CGFloat angle = (magnitude / self.halfWidth) * angleScale;
+
+    // Apply the rotation
+    self.layer.anchorPoint = CGPointMake(0.5, 0.5);
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -500;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, angle * M_PI / 180.0f, bx, by, 0.0);
+    self.layer.transform = rotationAndPerspectiveTransform;
 }
 
 @end
