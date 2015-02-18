@@ -107,11 +107,11 @@ static const CGFloat kNPKardViewAngleScale = 7.0;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, angle * M_PI / 180.0f, bx, by, 0.0);
 
     if (animated) {
-        self.layer.transform = rotationAndPerspectiveTransform;
-    } else {
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.05 animations:^{
             self.layer.transform = rotationAndPerspectiveTransform;
         }];
+    } else {
+        self.layer.transform = rotationAndPerspectiveTransform;
     }
 }
 

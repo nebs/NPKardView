@@ -10,14 +10,14 @@
 	<string>Kard</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D2A574FB83AC4B3CBEE1D3F1170E15BFA5C45B0B</key>
+		<key>3BC312F5821724280D550FF07930164BC85DFF8E</key>
 		<string>github.com:nebspetrovic/NPKardView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Kard.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D2A574FB83AC4B3CBEE1D3F1170E15BFA5C45B0B</key>
+		<key>3BC312F5821724280D550FF07930164BC85DFF8E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D2A574FB83AC4B3CBEE1D3F1170E15BFA5C45B0B</string>
+	<string>3BC312F5821724280D550FF07930164BC85DFF8E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D2A574FB83AC4B3CBEE1D3F1170E15BFA5C45B0B</string>
+			<string>3BC312F5821724280D550FF07930164BC85DFF8E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Kard</string>
 		</dict>
