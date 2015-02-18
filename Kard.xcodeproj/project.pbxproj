@@ -14,6 +14,7 @@
 		80B361D11A9441360046C5D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B361D01A9441360046C5D7 /* Images.xcassets */; };
 		80B361D41A9441360046C5D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B361D21A9441360046C5D7 /* LaunchScreen.xib */; };
 		80B361E01A9441360046C5D7 /* KardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B361DF1A9441360046C5D7 /* KardTests.m */; };
+		80B361EC1A94421A0046C5D7 /* NPKardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B361EB1A94421A0046C5D7 /* NPKardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		80B361D91A9441360046C5D7 /* KardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B361DE1A9441360046C5D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B361DF1A9441360046C5D7 /* KardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KardTests.m; sourceTree = "<group>"; };
+		80B361EA1A94421A0046C5D7 /* NPKardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPKardView.h; sourceTree = "<group>"; };
+		80B361EB1A94421A0046C5D7 /* NPKardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPKardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		80B361C21A9441360046C5D7 /* Kard */ = {
 			isa = PBXGroup;
 			children = (
+				80B361E91A9441FE0046C5D7 /* NPKardView */,
 				80B361C71A9441360046C5D7 /* AppDelegate.h */,
 				80B361C81A9441360046C5D7 /* AppDelegate.m */,
 				80B361CA1A9441360046C5D7 /* ViewController.h */,
@@ -117,6 +121,15 @@
 				80B361DE1A9441360046C5D7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		80B361E91A9441FE0046C5D7 /* NPKardView */ = {
+			isa = PBXGroup;
+			children = (
+				80B361EA1A94421A0046C5D7 /* NPKardView.h */,
+				80B361EB1A94421A0046C5D7 /* NPKardView.m */,
+			);
+			name = NPKardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +234,7 @@
 			files = (
 				80B361CC1A9441360046C5D7 /* ViewController.m in Sources */,
 				80B361C91A9441360046C5D7 /* AppDelegate.m in Sources */,
+				80B361EC1A94421A0046C5D7 /* NPKardView.m in Sources */,
 				80B361C61A9441360046C5D7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
