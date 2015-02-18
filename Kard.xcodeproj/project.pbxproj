@@ -13,19 +13,8 @@
 		80B361CF1A9441360046C5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B361CD1A9441360046C5D7 /* Main.storyboard */; };
 		80B361D11A9441360046C5D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B361D01A9441360046C5D7 /* Images.xcassets */; };
 		80B361D41A9441360046C5D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B361D21A9441360046C5D7 /* LaunchScreen.xib */; };
-		80B361E01A9441360046C5D7 /* KardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B361DF1A9441360046C5D7 /* KardTests.m */; };
 		80B361EC1A94421A0046C5D7 /* NPKardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B361EB1A94421A0046C5D7 /* NPKardView.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		80B361DA1A9441360046C5D7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80B361B81A9441360046C5D7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 80B361BF1A9441360046C5D7;
-			remoteInfo = Kard;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		80B361C01A9441360046C5D7 /* Kard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,22 +27,12 @@
 		80B361CE1A9441360046C5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B361D01A9441360046C5D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		80B361D31A9441360046C5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		80B361D91A9441360046C5D7 /* KardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		80B361DE1A9441360046C5D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		80B361DF1A9441360046C5D7 /* KardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KardTests.m; sourceTree = "<group>"; };
 		80B361EA1A94421A0046C5D7 /* NPKardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPKardView.h; sourceTree = "<group>"; };
 		80B361EB1A94421A0046C5D7 /* NPKardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPKardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		80B361BD1A9441360046C5D7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80B361D61A9441360046C5D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,7 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				80B361C21A9441360046C5D7 /* Kard */,
-				80B361DC1A9441360046C5D7 /* KardTests */,
 				80B361C11A9441360046C5D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				80B361C01A9441360046C5D7 /* Kard.app */,
-				80B361D91A9441360046C5D7 /* KardTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,23 +79,6 @@
 			children = (
 				80B361C41A9441360046C5D7 /* Info.plist */,
 				80B361C51A9441360046C5D7 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		80B361DC1A9441360046C5D7 /* KardTests */ = {
-			isa = PBXGroup;
-			children = (
-				80B361DF1A9441360046C5D7 /* KardTests.m */,
-				80B361DD1A9441360046C5D7 /* Supporting Files */,
-			);
-			path = KardTests;
-			sourceTree = "<group>";
-		};
-		80B361DD1A9441360046C5D7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				80B361DE1A9441360046C5D7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,24 +112,6 @@
 			productReference = 80B361C01A9441360046C5D7 /* Kard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		80B361D81A9441360046C5D7 /* KardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 80B361E61A9441360046C5D7 /* Build configuration list for PBXNativeTarget "KardTests" */;
-			buildPhases = (
-				80B361D51A9441360046C5D7 /* Sources */,
-				80B361D61A9441360046C5D7 /* Frameworks */,
-				80B361D71A9441360046C5D7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				80B361DB1A9441360046C5D7 /* PBXTargetDependency */,
-			);
-			name = KardTests;
-			productName = KardTests;
-			productReference = 80B361D91A9441360046C5D7 /* KardTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,10 +124,6 @@
 					80B361BF1A9441360046C5D7 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 5N74TJS3BK;
-					};
-					80B361D81A9441360046C5D7 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 80B361BF1A9441360046C5D7;
 					};
 				};
 			};
@@ -203,7 +141,6 @@
 			projectRoot = "";
 			targets = (
 				80B361BF1A9441360046C5D7 /* Kard */,
-				80B361D81A9441360046C5D7 /* KardTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +153,6 @@
 				80B361CF1A9441360046C5D7 /* Main.storyboard in Resources */,
 				80B361D41A9441360046C5D7 /* LaunchScreen.xib in Resources */,
 				80B361D11A9441360046C5D7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80B361D71A9441360046C5D7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,23 +170,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80B361D51A9441360046C5D7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80B361E01A9441360046C5D7 /* KardTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		80B361DB1A9441360046C5D7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 80B361BF1A9441360046C5D7 /* Kard */;
-			targetProxy = 80B361DA1A9441360046C5D7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		80B361CD1A9441360046C5D7 /* Main.storyboard */ = {
@@ -380,40 +294,6 @@
 			};
 			name = Release;
 		};
-		80B361E71A9441360046C5D7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KardTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kard.app/Kard";
-			};
-			name = Debug;
-		};
-		80B361E81A9441360046C5D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KardTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kard.app/Kard";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -431,15 +311,6 @@
 			buildConfigurations = (
 				80B361E41A9441360046C5D7 /* Debug */,
 				80B361E51A9441360046C5D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		80B361E61A9441360046C5D7 /* Build configuration list for PBXNativeTarget "KardTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80B361E71A9441360046C5D7 /* Debug */,
-				80B361E81A9441360046C5D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
