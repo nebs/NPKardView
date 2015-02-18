@@ -1,5 +1,7 @@
 #import "NPKardView.h"
 
+static const CGFloat kNPKardViewAngleScale = 10.0;
+
 @interface NPKardView ()
 
 @property (nonatomic) CGFloat width;
@@ -19,18 +21,19 @@
     self.halfWidth = self.width / 2.0;
     self.halfHeight = self.height / 2.0;
     self.backgroundColor = [UIColor blueColor];
+    self.layer.allowsEdgeAntialiasing = YES;
 }
 
 #pragma mark - Touch handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    [self rotateForTouchPoint:[[touches anyObject] locationInView:self]];
+    [self rotateForTouchPoint:[[touches anyObject] locationInView:self] animated:YES];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
-    [self rotateForTouchPoint:[[touches anyObject] locationInView:self]];
+    [self rotateForTouchPoint:[[touches anyObject] locationInView:self] animated:NO];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -46,10 +49,12 @@
 #pragma mark - Rotation
 
 - (void)resetRotation {
-    self.layer.transform = CATransform3DIdentity;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.layer.transform = CATransform3DIdentity;
+    }];
 }
 
-- (void)rotateForTouchPoint:(CGPoint)touchPoint {
+- (void)rotateForTouchPoint:(CGPoint)touchPoint animated:(BOOL)animated {
     /*
      Vector 'a' is the user's touch relative to the center.
      Vector 'b' is the rotation vector which is orthogonal to 'a'.
@@ -84,7 +89,7 @@
 
     // The rotation angle is proportial to 'a's distance from the center
     CGFloat magnitude = sqrtf((ax * ax) + (ay * ay));
-    CGFloat angleScale = (ax < 0) == (ay < 0) ? 10.0 : -10.0;
+    CGFloat angleScale = (ax < 0) == (ay < 0) ? kNPKardViewAngleScale : -kNPKardViewAngleScale;
     CGFloat angle = (magnitude / self.halfWidth) * angleScale;
 
     // Apply the rotation
@@ -92,7 +97,14 @@
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
     rotationAndPerspectiveTransform.m34 = 1.0 / -500;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, angle * M_PI / 180.0f, bx, by, 0.0);
-    self.layer.transform = rotationAndPerspectiveTransform;
+
+    if (animated) {
+        self.layer.transform = rotationAndPerspectiveTransform;
+    } else {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.layer.transform = rotationAndPerspectiveTransform;
+        }];
+    }
 }
 
 @end
